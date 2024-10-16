@@ -52,7 +52,7 @@ Manager Login Details
 
 If you select the Manager option, you will be required to enter the above credentials to proceed.
 
-Customer Options
+Customer Options: 
 Customers can view available rooms, make bookings, and update their personal details.
 
 ## Technologies Used
