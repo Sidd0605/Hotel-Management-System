@@ -4,15 +4,18 @@ This project is a Hotel Management System created using Python and Tkinter for t
 
 ## Features
 
-1) Manager Interface(similar to customer interface but with additional features:
+1) Manager Interface(similar to customer interface but with additional features) :
+   
       Access to manage rooms, bookings, and customer information.
 
 
-2) Customer Interface:
+3) Customer Interface:
+   
       Customers can check room availability, book rooms, and update personal details.
 
 
-3) Database:
+5) Database:
+   
     All customer and room information is stored in a MySQL database.
     The SQL queries and database schema are provided in the sql.txt file.
 
