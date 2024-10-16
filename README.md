@@ -20,12 +20,13 @@ This project is a Hotel Management System created using Python and Tkinter for t
     The SQL queries and database schema are provided in the sql.txt file.
 
 
-Prerequisites
+## Prerequisites
 
-Python 3.x installed on your machine.
-Tkinter (usually included with Python installations).
-MySQL database server installed and running.
-Python packages: mysql-connector-python for connecting to the MySQL database.
+   1) Python 3.x installed on your machine.
+   2) Tkinter (usually included with Python installations).
+   3) MySQL database server installed and running.
+   4) Python packages: mysql-connector-python for connecting to the MySQL database.
+      
 
 To install the MySQL connector, run:
 pip install mysql-connector-python
