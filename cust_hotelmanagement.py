@@ -14,8 +14,9 @@ class hotelmanagement:
         self.root.geometry("1550x800+0+0")
 
         # PHOTO
-        img1 = Image.open("C:/Users/lenovo/Desktop/python programming/python projects/hotelmanagement.jpg")
-        img1 = img1.resize((1500, 800), Image.ANTIALIAS)
+        img1 = Image.open("/Users/siddhanthsalian/Desktop/NMIMS/NMIMS Notes/SEM 3/database management/project hotel management/hotelmanagement.JPG")
+        # img1 = img1.resize((1500, 800), Image.ANTIALIAS)
+        img1 = img1.resize((1500, 800), Image.LANCZOS)
         self.photoimg1 = ImageTk.PhotoImage(img1)
 
         lblimg = Label(self.root, image=self.photoimg1, bd=4, relief=RIDGE)

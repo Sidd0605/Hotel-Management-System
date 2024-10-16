@@ -156,33 +156,69 @@ class booking:
 
 
 
+    # def add_data(self):
+    #     if self.var_customer_id.get()=="" or self.var_roomno.get()=="":
+    #         messagebox.showerror("Error","All fields are compulsory",parent=self.root)
+    #     else:
+    #         try:
+
+    #             conn=mysql.connector.connect(host="localhost",user="root",password="siddhanth0605",database="hotel")
+    #             my_cursor=conn.cursor()
+    #             my_cursor.execute("Insert into booking values(%s,%s,%s,%s,%s,%s,%s)",(
+    #             self.var_customer_id.get(),
+    #             self.var_roomno.get(),
+    #             self.var_start_date.get(),
+    #             self.var_end_date.get(),
+    #             self.var_days.get(),
+    #             self.var_price.get(),
+    #             self.var_total_price.get()
+    #             ))
+    #             conn.commit()
+    #             self.fetch_data()
+
+    #             conn.close()
+    #             messagebox.showinfo("Success","Booking done successfully",parent=self.root)
+    #         except Exception as es:
+    #             messagebox.showwarning("Warning",f"Something went wrong:{str(es)}",parent=self.root)
+
     def add_data(self):
-        if self.var_customer_id.get()=="" or self.var_roomno.get()=="":
-            messagebox.showerror("Error","All fields are compulsory",parent=self.root)
+        if self.var_customer_id.get() == "" or self.var_roomno.get() == "":
+            messagebox.showerror("Error", "All fields are compulsory", parent=self.root)
         else:
             try:
+                # Extract numeric price and round it to 2 decimal places
+                price_value = round(float(self.var_price.get().split('=')[1]), 2)
 
-                conn=mysql.connector.connect(host="localhost",user="root",password="siddhanthsalian0605",database="hotel")
-                my_cursor=conn.cursor()
-                my_cursor.execute("Insert into booking values(%s,%s,%s,%s,%s,%s,%s)",(
-                self.var_customer_id.get(),
-                self.var_roomno.get(),
-                self.var_start_date.get(),
-                self.var_end_date.get(),
-                self.var_days.get(),
-                self.var_price.get(),
-                self.var_total_price.get()
-                ))
+                # Round the total price to 2 decimal places
+                total_price_value = round(float(self.var_total_price.get()), 2)
+
+                conn = mysql.connector.connect(host="localhost", user="root", password="siddhanth0605", database="hotel")
+                my_cursor = conn.cursor()
+
+                # Insert the data into the database
+                my_cursor.execute(
+                    "INSERT INTO booking (customer_id, room_no, start_date, end_date, days, price, total_price) VALUES (%s, %s, %s, %s, %s, %s, %s)",
+                    (
+                        self.var_customer_id.get(),
+                        self.var_roomno.get(),
+                        self.var_start_date.get(),
+                        self.var_end_date.get(),
+                        self.var_days.get(),
+                        price_value,  # Rounded price
+                        total_price_value  # Rounded total price
+                    )
+                )
                 conn.commit()
                 self.fetch_data()
 
                 conn.close()
-                messagebox.showinfo("Success","Booking done successfully",parent=self.root)
+                messagebox.showinfo("Success", "Booking done successfully", parent=self.root)
             except Exception as es:
-                messagebox.showwarning("Warning",f"Something went wrong:{str(es)}",parent=self.root)
+                messagebox.showwarning("Warning", f"Something went wrong: {str(es)}", parent=self.root)
+
 
     def fetch_data(self):
-        conn=mysql.connector.connect(host="localhost",user="root",password="siddhanthsalian0605",database="hotel")
+        conn=mysql.connector.connect(host="localhost",user="root",password="siddhanth0605",database="hotel")
         my_cursor=conn.cursor()
         my_cursor.execute("select *from booking")
         rows=my_cursor.fetchall()
@@ -206,36 +242,6 @@ class booking:
         self.var_days.set(row[4])
         self.var_price.set(row[5])
         self.var_total_price.set(row[6])
-
-    #def search(self):
-     #   conn=mysql.connector.connect(host="localhost",user="root",password="siddhanthsalian0605",database="hotel")
-      #  my_cursor=conn.cursor()
-
-        #my_cursor.execute("select * from booking where "+str(self.search_var.get())+" LIKE '%"+str(self.text_search.get())+"%'")
-        #rows=my_cursor.fetchall()
-        #if len (rows)!=0:
-         ##   self.booking_details_table.delete(*self.booking_details_table.get_children())
-           # for i in rows:
-            #    self.booking_details_table.insert("",END,values=i)
-            #conn.commit()
-        #conn.close()
-        
-
-
-    #def delete(self):
-      #  delete=messagebox.askyesno("Hotel Management System","Do you want to delete this booking??",parent=self.root)
-       # if delete>0:
-        #    conn=mysql.connector.connect(host="localhost",user="root",password="siddhanthsalian0605",database="hotel")
-         #   my_cursor=conn.cursor()
-          #  query="Delete from booking where customer_id=%s"
-           # value=(self.var_customer_id.get(),)
-           # my_cursor.execute(query,value)
-        #else:
-         #   if not delete:
-          #      return
-        #conn.commit()
-        #self.fetch_data()
-        #conn.close()
 
 
     
@@ -261,25 +267,9 @@ class booking:
         self.var_total_price.set(totalprice)
 
         
-
-
-
-    
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == "__main__":
     root = Tk()
     obj = booking(root)
     root.mainloop()
+
+

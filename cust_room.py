@@ -124,7 +124,7 @@ class hotel_room_window:
       #  else:
        #     try:
 
-        #        conn=mysql.connector.connect(host="localhost",user="root",password="siddhanthsalian0605",database="hotel")
+        #        conn=mysql.connector.connect(host="localhost",user="root",password="siddhanth0605",database="hotel")
          ##       my_cursor=conn.cursor()
            #     my_cursor.execute("Insert into hotel_room values(%s,%s,%s)",(
             #    self.var_room_no.get(),
@@ -145,7 +145,7 @@ class hotel_room_window:
 
 
     def fetch_data(self):
-        conn=mysql.connector.connect(host="localhost",user="root",password="siddhanthsalian0605",database="hotel")
+        conn=mysql.connector.connect(host="localhost",user="root",password="siddhanth0605",database="hotel")
         my_cursor=conn.cursor()
         my_cursor.execute("select *from hotel_room")
         rows=my_cursor.fetchall()
@@ -172,7 +172,7 @@ class hotel_room_window:
     ##    if self.var_room_no.get()=="":
       #      messagebox.showerror("Error","Please enter room number",parent=self.root)
        # else:
-        #    conn=mysql.connector.connect(host="localhost",user="root",password="siddhanthsalian0605",database="hotel")
+        #    conn=mysql.connector.connect(host="localhost",user="root",password="siddhanth0605",database="hotel")
          #   my_cursor=conn.cursor()
           #  my_cursor.execute("Update hotel_room set room_type=%s,status=%s where room_no=%s ",(
             
@@ -190,7 +190,7 @@ class hotel_room_window:
     #def delete(self):
      #   delete=messagebox.askyesno("Hotel Management System","Do you want to delete this room details??",parent=self.root)
       #  if delete>0:
-       #     conn=mysql.connector.connect(host="localhost",user="root",password="siddhanthsalian0605",database="hotel")
+       #     conn=mysql.connector.connect(host="localhost",user="root",password="siddhanth0605",database="hotel")
         #    my_cursor=conn.cursor()
          #   query="Delete from hotel_room where room_no=%s"
           #  value=(self.var_room_no.get(),)
@@ -206,7 +206,7 @@ class hotel_room_window:
 
 
     def search(self):
-        conn=mysql.connector.connect(host="localhost",user="root",password="siddhanthsalian0605",database="hotel")
+        conn=mysql.connector.connect(host="localhost",user="root",password="siddhanth0605",database="hotel")
         my_cursor=conn.cursor()
 
         my_cursor.execute("select * from hotel_room where "+str(self.search_var.get())+" LIKE '%"+str(self.text_search.get())+"%'")

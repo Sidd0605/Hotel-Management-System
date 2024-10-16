@@ -1,22 +1,31 @@
 create database hotel;
+
 use hotel;
-create table customer(
-customer_id INT(100) primary key,
-name CHAR(100) not null,
-phone_no INT(10),
-email_id VARCHAR(100) not null,
-id_proof  VARCHAR(20) not null
+
+CREATE TABLE customer (
+    customer_id INT AUTO_INCREMENT PRIMARY KEY,
+    name CHAR(100) NOT NULL,
+    phone_no INT,
+    email_id VARCHAR(100) NOT NULL,
+    id_proof VARCHAR(20) NOT NULL,
+    id_number VARCHAR(50) NOT NULL
 );
+
 create table hotel_room(
 room_no INT(4) primary key,
 room_type VARCHAR(100) not null,
 status CHAR(11) not null DEFAULT 'available'
 );
-create table booking(
-customer_id INT(100),
-start_date DATE not null,
-end_date DATE not null,
-price DECIMAL(20,10) not null,
-foreign key(customer_id) references customer(customer_id)
+
+CREATE TABLE booking (
+    customer_id INT(100),
+    room_no INT(4),
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    days INT NOT NULL, 
+    price DECIMAL(20,10) NOT NULL,
+    total_price DECIMAL(20,10) NOT NULL, 
+    FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
+    FOREIGN KEY (room_no) REFERENCES hotel_room(room_no)  -- 
 );
  

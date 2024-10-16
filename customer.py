@@ -26,9 +26,6 @@ class customer_window:
         self.var_id_number=StringVar()
 
 
-
-
-
         #label frame
         labelframeleft=LabelFrame(self.root,bd=2,relief=RIDGE,text="Customer Details",font=("times new roman",16,"bold"),fg="black")
         labelframeleft.place(x=5,y=0,width=425,height=310)
@@ -39,7 +36,6 @@ class customer_window:
 
         enty_id=ttk.Entry(labelframeleft,textvariable=self.var_customer_id,font=("time new roman",12,"bold"),width=29,state="readonly")
         enty_id.grid(row=0,column=1)
-
 
 
         #customer name
@@ -159,7 +155,7 @@ class customer_window:
         else:
             try:
 
-                conn=mysql.connector.connect(host="localhost",user="root",password="siddhanthsalian0605",database="hotel")
+                conn=mysql.connector.connect(host="localhost",user="root",password="siddhanth0605",database="hotel")
                 my_cursor=conn.cursor()
                 my_cursor.execute("Insert into customer values(%s,%s,%s,%s,%s,%s)",(
                 self.var_customer_id.get(),
@@ -178,7 +174,7 @@ class customer_window:
                 messagebox.showwarning("Warning",f"Something went wrong:{str(es)}",parent=self.root)
 
     def fetch_data(self):
-        conn=mysql.connector.connect(host="localhost",user="root",password="siddhanthsalian0605",database="hotel")
+        conn=mysql.connector.connect(host="localhost",user="root",password="siddhanth0605",database="hotel")
         my_cursor=conn.cursor()
         my_cursor.execute("select *from customer")
         rows=my_cursor.fetchall()
@@ -207,7 +203,7 @@ class customer_window:
         if self.var_phone_number.get()=="":
             messagebox.showerror("Error","Please enter phone number",parent=self.root)
         else:
-            conn=mysql.connector.connect(host="localhost",user="root",password="siddhanthsalian0605",database="hotel")
+            conn=mysql.connector.connect(host="localhost",user="root",password="siddhanth0605",database="hotel")
             my_cursor=conn.cursor()
             my_cursor.execute("Update customer set name=%s,phone_no=%s,email_id=%s,id_proof=%s,id_number=%s where customer_id=%s",(
             self.var_name.get(),
@@ -226,7 +222,7 @@ class customer_window:
     def delete(self):
         delete=messagebox.askyesno("Hotel Management System","Do you want to delete this customer??",parent=self.root)
         if delete>0:
-            conn=mysql.connector.connect(host="localhost",user="root",password="siddhanthsalian0605",database="hotel")
+            conn=mysql.connector.connect(host="localhost",user="root",password="siddhanth0605",database="hotel")
             my_cursor=conn.cursor()
             query="Delete from Customer where customer_id=%s"
             value=(self.var_customer_id.get(),)
@@ -251,7 +247,7 @@ class customer_window:
 
         
     def search(self):
-        conn=mysql.connector.connect(host="localhost",user="root",password="siddhanthsalian0605",database="hotel")
+        conn=mysql.connector.connect(host="localhost",user="root",password="siddhanth0605",database="hotel")
         my_cursor=conn.cursor()
 
         my_cursor.execute("select * from customer where "+str(self.search_var.get())+" LIKE '%"+str(self.text_search.get())+"%'")
@@ -271,4 +267,6 @@ if __name__ == "__main__":
     root = Tk()
     obj = customer_window(root)
     root.mainloop() 
+
+
 

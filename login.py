@@ -14,8 +14,9 @@ class login_window:
 
         # PHOTO
         img1 = Image.open(
-            "C:/Users/lenovo/Desktop/python programming/python projects/login.jpg")
-        img1 = img1.resize((1500, 800), Image.ANTIALIAS)
+            "/Users/siddhanthsalian/Desktop/NMIMS/NMIMS Notes/SEM 3/database management/project hotel management/login.jpg")
+        # img1 = img1.resize((1500, 800), Image.ANTIALIAS)
+        img1 = img1.resize((1500, 800), Image.LANCZOS)
         self.photoimg1 = ImageTk.PhotoImage(img1)
         lblimg = Label(self.root, image=self.photoimg1, bd=4, relief=RIDGE)
         lblimg.place(x=0, y=0, width=1400, height=800)
