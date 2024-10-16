@@ -1,12 +1,10 @@
 # Hotel-Management-System using Python and MYSQL
 
-Hotel Management System
-
 This project is a Hotel Management System created using Python and Tkinter for the graphical user interface. It allows the user to choose between two roles: Manager and Customer. Based on the role selected, different features and functionalities are available.
 
-Features
+## Features
 
-Manager Login:
+Manager Interface(similar to customer interface but with additional features:
 Access to manage rooms, bookings, and customer information.
 
 Customer Interface:
