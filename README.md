@@ -5,17 +5,14 @@ This project is a Hotel Management System created using Python and Tkinter for t
 ## Features
 
 1) Manager Interface(similar to customer interface but with additional features:
-   
       Access to manage rooms, bookings, and customer information.
 
 
 2) Customer Interface:
-
       Customers can check room availability, book rooms, and update personal details.
 
 
 3) Database:
-   
     All customer and room information is stored in a MySQL database.
     The SQL queries and database schema are provided in the sql.txt file.
 
@@ -31,17 +28,16 @@ This project is a Hotel Management System created using Python and Tkinter for t
 To install the MySQL connector, run:
 pip install mysql-connector-python
 
-Database Setup
-Open sql.txt file located in the project directory.
-Run the SQL commands in the file to create the required database and tables.
-Ensure your MySQL server is running.
-Running the Application
-Clone this repository or download the files.
+## Database Setup
+   1) Open sql.txt file located in the project directory.
+   2) Run the SQL commands in the file to create the required database and tables.
+   3) Ensure your MySQL server is running.
+   4) Clone this repository or download the files.
+   5) Running the Application 
 
 Ensure all the files including the sql.txt file are in place.
 
 Run the main Python file to start the application:
-
 python main.py
 When prompted, choose whether you are a Manager or a Customer.
 
@@ -53,18 +49,7 @@ If you select the Manager option, you will be required to enter the above creden
 Customer Options
 Customers can view available rooms, make bookings, and update their personal details.
 
-Technologies Used
-Python: For backend logic.
-Tkinter: For creating the graphical user interface.
-MySQL: For storing hotel, room, and customer data.
-
-Future Improvements
-Adding additional features like payment processing.
-Implementing advanced customer queries and room management.
-Contributing
-If you'd like to contribute to this project, feel free to fork the repository and submit a pull request. All contributions are welcome!
-
-License
-This project is licensed under the MIT License.
-
-
+## Technologies Used
+   1) Python: For backend logic.
+   2) Tkinter: For creating the graphical user interface.
+   3) MySQL: For storing hotel, room, and customer data.
