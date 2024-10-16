@@ -37,15 +37,15 @@ pip install mysql-connector-python
 
 Ensure all the files including the sql.txt file are in place.
 
-Run the main Python file to start the application:
-
-python choice.py
+Run the main Python file to start the application: python choice.py
 
 When prompted, choose whether you are a Manager or a Customer.
 
 Manager Login Details
-Username: manager
-Password: 12345
+
+      Username: manager
+      
+      Password: 12345
 
 If you select the Manager option, you will be required to enter the above credentials to proceed.
 
