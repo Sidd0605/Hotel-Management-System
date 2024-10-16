@@ -55,4 +55,4 @@ Customers can view available rooms, make bookings, and update their personal det
 ## Technologies Used
    1) Python: For backend logic.
    2) Tkinter: For creating the graphical user interface.
-   3) MySQL: For storing hotel, room, and customer data.
+   3) MySQL: For database
